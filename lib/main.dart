@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:homework_4/chat_screen.dart';
 import 'package:homework_4/splashscreen.dart';
 import 'firebase_options.dart';
 
@@ -239,6 +240,16 @@ class ProfileScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text("Profile"),
         actions: [
+          ElevatedButton(
+  onPressed: () {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (_) => ChatScreen()),
+    );
+  },
+  child: Text("Go to Chat"),
+),
+
           IconButton(
             icon: Icon(Icons.logout),
             onPressed: () async {
